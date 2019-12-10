@@ -108,6 +108,9 @@ h6 {
 	font-weight: bold;
 }
 
+h5 {
+	font-size: 1em;
+}
 #todo {
 	background-color: #55c8d1;
 	margin-left: 40px;

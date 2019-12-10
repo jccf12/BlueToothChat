@@ -24,7 +24,7 @@
 				<h4>Friends Nearby</h4>
 
 				<div class="add-form"> Look for friend: 
-					<form action="{{ url_for('add', type = 'addtodo') }}" method="POST">
+					<form action="{{ url_for('add', type = 'addfriend') }}" method="POST">
 						<div class="col-sm">
 							<span> username: </span><input type="text" name="taskname" required="required">
 						</div>
@@ -34,10 +34,12 @@
 				</div> 
 
 				<div>
-					<h5 style="margin-top: 30px">Your Friends</h5>
+					<h6 style="margin-top: 30px">Your Friends</h6>
 
-					<p>Armin</p>
-					<p>Bella</p>
+					<h5>Click on your friend below to chat with them :)</h5>
+
+					<p> <a href="index.html">Armin</a> </p>
+					<p> <a href="index.html">Bella</a> </p>
 					
 				</div>
 
@@ -61,23 +63,6 @@
 
 		</div> <!-- end of row with columns -->
 
-
-		<!-- <form action="#" method="post" class="text-center">
-		   <div>
-		    Enter a new task
-		  <div>
-		  <div>
-		    <label for="task_title">Task title:</label>
-		    <input type="text" id="task_title" name="user_task_title" />
-		  </div>
-		  <div>
-		    <label for="task_description">Description:</label>
-		    <textarea id="task_description" name="user_task_description"></textarea>
-		  </div>
-		  <div class="button">
-			  <button type="submit">Submit task</button>
-			</div>
-		</form> -->
 
 
 	</div>
