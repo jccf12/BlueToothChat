@@ -1,0 +1,130 @@
+html body {
+    background-color: #114072;
+    color:white;
+}
+
+.state-box {
+	margin: 40px 20px 0px 20px;
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.add-form {
+	border-radius: 15px;
+	padding: 10px 10px 10px 10px;
+	border-width: 1px;
+	border-style: dashed;
+}
+
+.add-form form input {
+	  border-radius: 5px;
+    background-color: white;
+    border-style: hidden;
+    opacity: 0.85;
+    max-width: 150px;
+    color: grey;
+}
+
+.add-form form div {
+	margin-bottom: 10px;
+}
+
+.task {
+	margin-top: 20px;
+	color: #114072;
+	background-color: white;
+	border-radius: 15px;
+	padding: 15px 10px 10px 10px;
+}
+
+.task p {
+	margin-bottom: 20px;
+}
+
+.task a {
+	padding: 1px 7px 1px 10px;
+	margin-right: 5px;
+	margin-left: 5px;
+	border-style: solid;
+	border-color: #065da0;
+	border-radius: 5px;
+	border-width: 2px;
+	text-decoration: none;
+	color: #065da0;
+}
+
+.task a:hover {
+	color: white;
+	background-color: #065da0;
+}
+
+#delete {
+	color: #ad0a28;
+	border-color: #ad0a28;
+}
+
+.dates {
+	margin-top: 20px;
+	font-size: 13px;
+}
+
+#datelabel {
+	margin-bottom: 0px;
+	font-weight: lighter;
+}
+
+#date {
+	max-width: 19ch;
+	white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: lighter;
+}
+
+#delete:hover {
+	background: #ad0a28;
+	color: white;
+}
+
+#addtask {
+	margin-top: 10px;
+	color: #065da0;
+	font-size: 20px;
+	padding: 8px 12px 8px 12px;
+	margin-bottom: 10px;
+}
+
+#addtask:hover {
+	margin-top: 10px;
+	color: white;
+	font-size: 20px;
+	padding: 8px 12px 8px 12px;
+	margin-bottom: 10px;
+	background-color: #065da0;
+}
+
+h6 {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+#todo {
+	background-color: #55c8d1;
+	margin-left: 40px;
+}
+
+#doing {
+	background-color: #ddb85a;
+}
+
+#done {
+	background-color: #5bd89b;
+	margin-right: 40px;
+}
+
+form {
+	margin-top: 20px;
+	border-width: 2px;
+	border-color: white;
+	
+}
