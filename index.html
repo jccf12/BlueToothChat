@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blue Tooth Chat</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/bootstrap.min.css') }}">
+   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styles.css') }}">
+   <!-- <link rel="stylesheet" href="/static/css/reset.css?q=1280549780"
+   type="text/css" media="screen" charset="utf-8" /> -->
+
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-dark bg-dark">
+			<h2>Juan Carlos's Kan Board</h2>
+		</nav>
+	</header>
+
+	<div class="container-fluid">
+
+		<div class="row">
+
+			<div id="todo" class="state-box col-sm text-center">
+
+				<h4>To Do</h4>
+
+				<div class="add-form"> Add task: 
+					<form action="{{ url_for('add', type = 'addtodo') }}" method="POST">
+						<div class="col-sm">
+							<span> Task Title: </span><input type="text" name="taskname" required="required">
+						</div>
+						
+						<div class="col-sm">
+							<span> Description: </span><input type="text" name="description">
+						</div>
+						
+						<div class="col-sm">
+							<span> Due Date: </span><input type="date" name="duedate" required="required">
+						</div>
+						
+						<input id ="addtask" type="submit" value="Add Task">
+					</form>
+				</div> 
+
+				
+				{% for task in todo %}
+				<div class="task text-left">
+					<h6>{{task.taskname}}</h6>
+					<p>{{task.description}}</p>
+					<div class="text-center">
+						<a href="{{ url_for('move', id=task.id, type='movedoing') }}"> Start </a>
+						<a href="{{ url_for('move', id=task.id, type='movedone') }}"> Finish </a>
+						<a id ="delete" href="{{ url_for('move', id=task.id, type='delete') }}"> Delete </a>
+					</div>
+					<div class="dates row">
+						<div class="col-md-4">
+							<p id="datelabel"> Date Added: </p> 
+							<p id="date">{{task.dateadded}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Last Modified: </p> 
+							<p id="date">{{task.lastmodified}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Due Date: </p> 
+							<p id="date">{{task.duedate}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+
+			<div id="doing" class="state-box col-sm text-center">
+				<h4>Doing</h4>
+
+				<div class="add-form"> Add task: 
+					<form action="{{ url_for('add', type = 'adddoing') }}" method="POST">
+						<div class="col-sm">
+							<span> Task Title: </span><input type="text" name="taskname" required="required">
+						</div>
+						
+						<div class="col-sm">
+							<span> Description: </span><input type="text" name="description">
+						</div>
+						
+						<div class="col-sm">
+							<span> Due Date: </span><input type="date" name="duedate" required="required">
+						</div>
+						
+						<input id ="addtask" type="submit" value="Add Task">
+					</form>
+				</div> 
+
+				{% for task in doing %}
+				<div class="task text-left">
+					<h6>{{task.taskname}}</h6>
+					<p>{{task.description}}</p>
+					<div class="text-center">
+						<a href="{{ url_for('move', id=task.id, type='movetodo') }}"> Not Yet Started </a>
+						<a href="{{ url_for('move', id=task.id, type='movedone') }}"> Finish </a>
+						<a id ="delete" href="{{ url_for('move', id=task.id, type='delete') }}"> Delete </a>
+					</div>
+					<div class="dates row">
+						<div class="col-md-4">
+							<p id="datelabel"> Date Added: </p> 
+							<p id="date">{{task.dateadded}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Last Modified: </p> 
+							<p id="date">{{task.lastmodified}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Due Date: </p> 
+							<p id="date">{{task.duedate}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+
+			<div id="done" class="state-box col-sm text-center">
+				<h4>Done</h4>
+
+				<div class="add-form"> Add task: 
+					<form action="{{ url_for('add', type = 'adddone') }}" method="POST">
+						<div class="col-sm">
+							<span> Task Title: </span><input type="text" name="taskname" required="required">
+						</div>
+						
+						<div class="col-sm">
+							<span> Description: </span><input type="text" name="description">
+						</div>
+						
+						<div class="col-sm">
+							<span> Due Date: </span><input type="date" name="duedate" required="required">
+						</div>
+						
+						<input id ="addtask" type="submit" value="Add Task">
+					</form>
+				</div> 
+
+				{% for task in done %}
+				<div class="task text-left">
+					<h6>{{task.taskname}}</h6>
+					<p>{{task.description}}</p>
+					<div class="text-center">
+						<a href="{{ url_for('move', id=task.id, type='movetodo') }}"> Not Yet Started </a>
+						<a href="{{ url_for('move', id=task.id, type='movedoing') }}"> Not Yet Finished </a>
+						<a id ="delete" href="{{ url_for('move', id=task.id, type='delete') }}"> Delete </a>
+					</div>
+					<div class="dates row">
+						<div class="col-md-4">
+							<p id="datelabel"> Date Added: </p> 
+							<p id="date">{{task.dateadded}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Last Modified: </p> 
+							<p id="date">{{task.lastmodified}}</p>
+						</div>
+						<div class="col-md-4">
+							<p id="datelabel"> Due Date: </p> 
+							<p id="date">{{task.duedate}}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div> <!-- end of row with columns -->
+
+
+		<!-- <form action="#" method="post" class="text-center">
+		   <div>
+		    Enter a new task
+		  <div>
+		  <div>
+		    <label for="task_title">Task title:</label>
+		    <input type="text" id="task_title" name="user_task_title" />
+		  </div>
+		  <div>
+		    <label for="task_description">Description:</label>
+		    <textarea id="task_description" name="user_task_description"></textarea>
+		  </div>
+		  <div class="button">
+			  <button type="submit">Submit task</button>
+			</div>
+		</form> -->
+
+
+	</div>
+</body>
+</html>
