@@ -1,12 +1,26 @@
 html body {
-    background-color: #114072;
+    background-color: #7118D6;
     color:white;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1em;
+	font-style: italic;
+}
+
+#header-nav {
+	background-color: #000000!important;
 }
 
 .state-box {
 	margin: 40px 20px 0px 20px;
 	border-radius: 15px;
 	padding: 20px;
+	height: 100%;
 }
 
 .add-form {
@@ -29,33 +43,13 @@ html body {
 	margin-bottom: 10px;
 }
 
-.task {
-	margin-top: 20px;
-	color: #114072;
-	background-color: white;
-	border-radius: 15px;
-	padding: 15px 10px 10px 10px;
-}
-
-.task p {
-	margin-bottom: 20px;
-}
-
-.task a {
-	padding: 1px 7px 1px 10px;
-	margin-right: 5px;
-	margin-left: 5px;
-	border-style: solid;
-	border-color: #065da0;
-	border-radius: 5px;
-	border-width: 2px;
-	text-decoration: none;
-	color: #065da0;
-}
-
-.task a:hover {
+a {
 	color: white;
-	background-color: #065da0;
+}
+
+a:hover {
+	font-weight: bolder;
+	color: white;
 }
 
 #delete {
@@ -103,31 +97,91 @@ html body {
 	background-color: #065da0;
 }
 
-h6 {
-	font-size: 1.2em;
-	font-weight: bold;
-}
 
-h5 {
-	font-size: 1em;
-}
-#todo {
-	background-color: #55c8d1;
+#friends-div, #chat-div {
+	background-color: #01AC99;
 	margin-left: 40px;
 }
 
-#doing {
-	background-color: #ddb85a;
+#chat-box {
+	background-color: white;
+	margin: 20px;
+	border-radius: 10px;
+	padding-bottom: 15px;
+	padding-top: 10px;
 }
 
-#done {
-	background-color: #5bd89b;
-	margin-right: 40px;
+.chat-msg-wrapper {
+	width: 100%
 }
+
+.chat-msg {
+	background-color: #FFD634;
+	color: black;
+	max-width: 40%;
+	margin: 10px 10px;
+	padding: 2px 5px;
+	border-radius: 5px;
+}
+
+#schedule-div {
+	background-color: #FFD634;
+	color: black;
+}
+
+#input-chat {
+	background-color: lightgray;
+	margin-left: 10px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+#texttosend {
+	margin-left: 10px;
+	border-radius: 5px;
+	width: 74%;
+}
+
+#sendtext {
+	background-color: #01AC99;
+	padding: 3px 10px;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-left: 8px;
+	width: 17%;
+}
+
+#goback {
+	margin-right: 20px;
+	margin-top: 30px;
+}
+
+#goback a {
+	background-color: white;
+	color: #01AC99;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+
+ul {
+	list-style-position: inside;
+}
+
 
 form {
 	margin-top: 20px;
 	border-width: 2px;
 	border-color: white;
 	
+}
+
+@media (max-width: 992px) {
+	.state-box {
+		margin-top: 50px;
+	}
+	#friends-div, #schedule-div {
+		margin: 40px 20px 0px 20px; 
+		height: auto;
+	}
 }

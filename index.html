@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- '<a href="index.html">hi</a>'+input_name+'</a>' -->
+	<script>
+		function addName(input_name){
+		  var friend = document.createElement("p");
+		  var mystring = '<a href = "chat.html">'+input_name+'</a>';
+		  friend.innerHTML = mystring;
+		  document.getElementById("added-friends").appendChild(friend);
+		}
+	</script>
+
 <head>
 	<title>Blue Tooth Chat</title>
 	<link rel= "stylesheet" type= "text/css" href= "css/bootstrap.min.css">
@@ -11,58 +21,63 @@
 <body>
 	<header>
 		<nav id="header-nav" class="navbar navbar-dark bg-dark">
-			<h2>BlueTooth Chat</h2>
+			<h1>BlueTooth Chat</h1>
 		</nav>
 	</header>
 
 	<div class="container-fluid">
-
 		<div class="row">
+		<div  class="col-lg-6 text-center">
+			<div id="friends-div" class="state-box">
+				<h2>Friends Nearby</h2>
 
-			<div id="todo" class="state-box col-sm text-center">
-
-				<h4>Friends Nearby</h4>
-
-				<div class="add-form"> Look for friend: 
-					<form action="{{ url_for('add', type = 'addfriend') }}" method="POST">
+				<div class="add-form"> 
+					<h3> Look for friend</h3>
+					<form action="javascript:;" onsubmit="addName(document.getElementById('friendname').value)">
 						<div class="col-sm">
-							<span> username: </span><input type="text" name="taskname" required="required">
+							<span> username: </span><input type="text" name="taskname" id = "friendname" required="required">
 						</div>
 						
-						<input id ="addtask" type="submit" value="Add Friend">
+						<input id ="addfriend" type="submit" style="margin-top: 15px; margin-bottom: 10px;">
 					</form>
 				</div> 
 
 				<div>
-					<h6 style="margin-top: 30px">Your Friends</h6>
+					<h3 style="margin-top: 30px;">Your Friends</h3>
 
-					<h5>Click on your friend below to chat with them :)</h5>
+					<h4 style="margin-bottom: 30px;">Click on your friend below to chat with them :)</h4>
 
-					<p> <a href="index.html">Armin</a> </p>
-					<p> <a href="index.html">Bella</a> </p>
-					
+					<div id="added-friends"></div>
+						<p> <a href="chat.html">Armin</a> </p>
+						<p> <a href="chat.html">Bella</a> </p>
 				</div>
+			</div> <!-- end friends-div -->
+		</div> <!-- end col-md-6 -->
 
 
-			</div>
+			<div class="col-lg-6 text-center">
+				<div id="schedule-div" class="state-box">
+					<h2>Event Schedule</h2>
 
-			<div id="doing" class="state-box col-sm text-center">
-				<h4>Event Schedule</h4>
+					<div>
+						<h5 style="margin-top: 30px; margin-bottom: 25px;">Coming up next</h5>
 
-				<div>
-					<h5 style="margin-top: 30px">Coming up next</h5>
+						<ul>
+							<li>Drake Bell - 3:00 PM - Magic Gardens</li>
+							<li>Bad Bunny - 3:00 PM - Mainstage</li>
+							<li>Hanna Montanna - 5:00 PM - Mainstage</li>
+							<li>Sam Smith - 5:00 PM - Magic Gardens</li>
+							<li>Kanye West - 7:00 PM - Rap Stage</li>
+							<li>Justin Bieber - 7:00 PM - Mainstage</li>
+							<li>Eminiem - 10:00 PM - Rap Stage</li>
+							<li>Ariana Grande - 10:00 PM - Mainstage</li>
+						</ul>
+						
+					</div>
+				</div> <!-- end schedule-div-->
+			</div> <!-- end col-md-6 -->
 
-					<p>Hanna Montanna - 5:00 PM - Mainstage</p>
-					<p>Justin Bieber - 7:00 PM - Mainstage</p>
-					<p></p>
-					
-				</div>
-
-			</div>
-
-
-		</div> <!-- end of row with columns -->
-
+		</div> <!-- end row -->
 
 
 	</div>

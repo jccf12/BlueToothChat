@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- '<a href="index.html">hi</a>'+input_name+'</a>' -->
+	<script>
+		function addChat(input_chat){
+		  var new_chat1 = document.createElement("p");
+		  new_chat1.className = "chat-msg";
+		  new_chat1.innerHTML = input_chat;
+		  document.getElementById("next-msg1").appendChild(new_chat1);
+		  var new_chat2 = document.createElement("p");
+		  new_chat2.className = "chat-msg";
+		  new_chat2.innerHTML = "I'm at the Mainstage! Come over!";
+		  document.getElementById("next-msg2").appendChild(new_chat2);
+		}
+	</script>
+
+<head>
+	<title>Blue Tooth Chat</title>
+	<link rel= "stylesheet" type= "text/css" href= "css/bootstrap.min.css">
+   <link rel= "stylesheet" type= "text/css" href= "css/styles.css">
+   <!-- <link rel="stylesheet" href="/static/css/reset.css?q=1280549780"
+   type="text/css" media="screen" charset="utf-8" /> -->
+
+</head>
+<body>
+	<header>
+		<nav id="header-nav" class="navbar navbar-dark bg-dark">
+			<h1>BlueTooth Chat</h1>
+		</nav>
+	</header>
+
+	<div class="container-fluid">
+		<div class="row">
+		<div class="col-2"></div>
+		<div  class="col-8">
+			<div id="chat-div" class="state-box">
+
+				<h2 style="margin-left: 20px;">Armin</h2>
+				<div id="chat-box">
+					<div class="chat-msg-wrapper">
+						<div>
+							<p class="chat-msg">Hi Juan! </p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div align="right"> 
+							<p class="chat-msg">Hi Armin! </p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div> 
+							<p class="chat-msg">This app is amazing! </p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div align="right"> 
+							<p class="chat-msg">I know! </p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div> 
+							<p class="chat-msg"> Now we'll never lose each other :)</p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div align="right"> 
+							<p class="chat-msg"> Exactly!</p> 
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div id="next-msg1" align="right"> 
+							<!-- <p  class="chat-msg"></p>  -->
+						</div>
+					</div>
+					<div class="chat-msg-wrapper">
+						<div id="next-msg2"> 
+
+							<!-- <p class="chat-msg"></p>  -->
+						</div>
+					</div>
+
+					<div class="chat-msg-wrapper">
+						<div id="input-chat" align="right">
+							<form action="javascript:;" onsubmit="addChat(document.getElementById('texttosend').value)">
+								
+									<input id = "texttosend" type="text" name="taskname" required="required">
+								
+								<input id ="sendtext" type="submit" style="margin-top: 15px; margin-bottom: 10px;" value="Send">
+							</form>
+						</div>
+					</div>
+
+				</div> <!-- end chat-box -->
+
+				<div align="right">
+					<div id="goback">
+						<a href="index.html"> Go back</a>
+					</div>
+				</div>
+
+
+				
+			</div> <!-- end chat-div -->
+		</div> <!-- end col-8 -->
+		<div class="col-2"></div>
+		</div> <!-- end row -->
+
+
+	</div>
+</body>
+</html>
