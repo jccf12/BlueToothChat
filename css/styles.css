@@ -163,6 +163,10 @@ a:hover {
 	border-radius: 5px;
 }
 
+#addfriend {
+	width: 100%;
+}
+
 
 ul {
 	list-style-position: inside;
@@ -176,6 +180,7 @@ form {
 	
 }
 
+
 @media (max-width: 992px) {
 	.state-box {
 		margin-top: 50px;
@@ -184,4 +189,16 @@ form {
 		margin: 40px 20px 0px 20px; 
 		height: auto;
 	}
+
+	h1, h2, h3, h5, h6 {
+		font-size: 1.4em;
+	}
+	body {
+		font-size: 2.5em;
+	}
+	.col-md-8 {
+		flex: 100%!important;
+		max-width: 100%!important;
+	}
 }
+
