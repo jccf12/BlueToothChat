@@ -3,10 +3,19 @@
 <!-- '<a href="index.html">hi</a>'+input_name+'</a>' -->
 	<script>
 		function addName(input_name){
+			
 		  var friend = document.createElement("p");
-		  var mystring = '<a href = "chat.html">'+input_name+'</a>';
+		  var mystring = '<a style = "color:black" href = "chat.html">'+input_name+'</a>';
 		  friend.innerHTML = mystring;
+
+		  var friend2 = document.createElement("p");
+		  var mystring2 = '<a style = "color:black"  href = "chat.html">'+input_name+'</a>';
+		  friend2.innerHTML = mystring;
+		  var loc = Math.floor(Math.random() * 4);
+		  var elementid = ["loc-main1","loc-main2","loc-alternative","loc-perry"][loc];
+
 		  document.getElementById("added-friends").appendChild(friend);
+		  document.getElementById(elementid).appendChild(friend2);
 		}
 	</script>
 
@@ -29,13 +38,13 @@
 		<div class="row">
 		<div  class="col-lg-6 text-center">
 			<div id="friends-div" class="state-box">
-				<h2>Friends Nearby</h2>
+				<h2>Friends</h2>
 
 				<div class="add-form"> 
 					<h3> Look for friend</h3>
 					<form action="javascript:;" onsubmit="addName(document.getElementById('friendname').value)">
 						<div class="col-sm">
-							<span> username: </span><input type="text" name="taskname" id = "friendname" required="required">
+							<span> Name: </span><input type="text" name="taskname" id = "friendname" required="required">
 						</div>
 						
 						<input id ="addfriend" type="submit" style="margin-top: 15px; margin-bottom: 10px;" value="Add">
@@ -49,7 +58,36 @@
 
 					<div id="added-friends"></div>
 				</div>
+
+				<div id="Location Div">
+					<h3 style="margin-top: 50px">Friend's Locations</h3>
+					<div class="container-fluid">
+					<div id="mapa"></div>
+					<div class="row">
+						<div class="col-lg-3">
+							<h6>Main 1</h3>
+							<div id="loc-main1"></div>
+						</div>
+						<div class="col-lg-3">
+							<h6>Main 2</h3>
+							<div id="loc-main2"></div>
+						</div>
+						<div class="col-lg-3">
+							<h6>Alternative</h3>
+							<div id="loc-alternative"></div>
+						</div>
+						<div class="col-lg-3">
+							<h6>Perry's</h3>
+							<div id="loc-perry"></div>
+						</div>
+					</div>
+						
+					</div>
+				</div>
 			</div> <!-- end friends-div -->
+
+
+
 		</div> <!-- end col-md-6 -->
 
 
@@ -61,11 +99,11 @@
 						<div id="full-lineup"></div>
 						<div class="row" id="below-lineup">
 							<div class="col-sm-6 text-left">
-								<a href = "popular.html"> Checkout the most popular artists</a>
+								<a style = "color: black" href = "popular.html"> Checkout the artists!</a>
 							</div>
 		
 							<div class="col-sm-6 text-right">
-								<a href = "https://www.lollapaloozaar.com/tickets/" target="_blank">Buy Tickets</a>
+								<a style = "color: black" href = "https://www.lollapaloozaar.com/tickets/" target="_blank">Buy Tickets</a>
 							</div>
 						</div>
 					</div>

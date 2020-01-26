@@ -30,6 +30,13 @@ h4 {
 	border-style: dashed;
 }
 
+#added-friends {
+	padding-top: 15px;
+	border-radius: 15px;
+	border-width: 1px;
+	border-style: dashed;
+}
+
 .add-form form input {
 	  border-radius: 5px;
     background-color: white;
@@ -187,13 +194,20 @@ form {
 }
 
 #full-lineup {
-	height: 600px;
+	height: 800px;
 	background: url("../images/full_lineup.jpg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
 }
 
+#mapa {
+	height: 500px;
+	background: url("../images/map_lolla.jpg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
 
 @media (max-width: 992px) {
 	.state-box {
@@ -213,6 +227,14 @@ form {
 	.col-md-8 {
 		flex: 100%!important;
 		max-width: 100%!important;
+	}
+
+	#mapa, #full-lineup {
+		height: 300px;
+	}
+
+	#below-lineup {
+		margin: auto;
 	}
 }
 
